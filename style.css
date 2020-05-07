@@ -12,12 +12,10 @@ legend {
   padding: 0.3em 1em;
 }
 
-
 input[type="range"] {
   width: 80%;
   min-width: 129px;
 }
-
 
 label {
   white-space: nowrap;
@@ -34,4 +32,27 @@ label {
   /* margin-top: 1em; */
 }
 
+#session span {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  color: #333;
+  margin-right: 0.1rem;
+  margin-bottom: 0.1rem;
+}
 
+#session .val1 {
+  background-color: #ff9696;
+}
+#session .val2 {
+  background-color: #ffc796;
+}
+#session .val3 {
+  background-color: #fbff96;
+}
+#session .val4 {
+  background-color: #c5ff96;
+}
+#session .val5 {
+  background-color: #96ff9d;
+}
