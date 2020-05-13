@@ -2,9 +2,14 @@
 document.querySelector("#shot-rating").addEventListener('change', addShot);
 
 function addShot(event) {
-  // Get distance and shotType elements
+  // Get distance element
   const distance = document.querySelector("input[type=range]");
-  const shotType = document.querySelector("#shot-type input[type=radio]:checked");
+
+  // Get shotType element
+  // const shotType = document.querySelector("#shot-type input[type=radio]:checked");
+  const shotType = document.querySelector("#shot-type select");
+
+  // Get shotRating target element
   const shotRating = event.target;
 
   // if shotType is checked
