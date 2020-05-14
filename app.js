@@ -1,6 +1,13 @@
 // Add event listener for "#shot-rating" fieldset
 document.querySelector("#shot-rating").addEventListener('change', addShot);
 
+// Get span for output statistics
+const shotsOutput = document.querySelector("#shotNumber");
+const ratingOutput = document.querySelector("#averageRating");
+// Init statistics variables
+let shotNumber = 0;
+let totalPoint = 0;
+
 function addShot(event) {
   // Get distance element
   const distance = document.querySelector("input[type=range]");
@@ -26,6 +33,15 @@ function addShot(event) {
       span.textContent = shotRating.value;
       // Add span with rating to div
       session.append(span);
+
+      // Add statistics textContent
+      shotNumber++;
+      totalPoint += +shotRating.value;
+      averageRating = Math.round((totalPoint/shotNumber) * 20);
+
+      shotsOutput.textContent = shotNumber;
+      ratingOutput.textContent = averageRating + '%';
+
 
       console.log(distance.value, shotType.value, shotRating.value);
       setTimeout(function () {
