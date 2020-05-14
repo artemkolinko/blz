@@ -34,14 +34,14 @@ function addShot(event) {
       // Add span with rating to div
       session.append(span);
 
-      // Add statistics textContent
+      // Calculate statistics
       shotNumber++;
       totalPoint += +shotRating.value;
-      averageRating = Math.round((totalPoint/shotNumber) * 20);
+      averageRating = (totalPoint/shotNumber).toFixed(2);
 
+      // Add statistics to UI 
       shotsOutput.textContent = shotNumber;
-      ratingOutput.textContent = averageRating + '%';
-
+      ratingOutput.textContent = `${averageRating} (${Math.round(averageRating * 20)}%)`;
 
       console.log(distance.value, shotType.value, shotRating.value);
       setTimeout(function () {
