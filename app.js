@@ -1,20 +1,20 @@
 // Add event listener for "#shot-rating" fieldset
-document.querySelector("#shot-rating").addEventListener('change', addShot);
+document.querySelector('#shot-rating').addEventListener('change', addShot);
 
 // Get span for output statistics
-const shotsOutput = document.querySelector("#shotNumber");
-const ratingOutput = document.querySelector("#averageRating");
+const shotsOutput = document.querySelector('#shotNumber');
+const ratingOutput = document.querySelector('#averageRating');
 // Init statistics variables
 let shotNumber = 0;
 let totalPoint = 0;
 
 function addShot(event) {
   // Get distance element
-  const distance = document.querySelector("input[type=range]");
+  const distance = document.querySelector('input[type=range]');
 
   // Get shotType element
   // const shotType = document.querySelector("#shot-type input[type=radio]:checked");
-  const shotType = document.querySelector("#shot-type select");
+  const shotType = document.querySelector('#shot-type select');
 
   // Get shotRating target element
   const shotRating = event.target;
@@ -22,9 +22,9 @@ function addShot(event) {
   // if shotType is checked
   if (shotType) {
     // Событие "click" по нажатию на тег label вызывает автоматический клик по тегу input, поэтому мы используем событие "change" или "input"
-    if (shotRating.tagName === "INPUT") {
+    if (shotRating.tagName === 'INPUT') {
       // Get session div
-      const session = document.getElementById("session");
+      const session = document.getElementById('session');
       // Create span element
       const span = document.createElement('span');
       // Add class
@@ -37,21 +37,22 @@ function addShot(event) {
       // Calculate statistics
       shotNumber++;
       totalPoint += +shotRating.value;
-      averageRating = (totalPoint/shotNumber).toFixed(2);
+      averageRating = (totalPoint / shotNumber).toFixed(2);
 
-      // Add statistics to UI 
+      // Add statistics to UI
       shotsOutput.textContent = shotNumber;
-      ratingOutput.textContent = `${averageRating} (${Math.round(averageRating * 20)}%)`;
+      ratingOutput.textContent = `${averageRating} (${Math.round(
+        averageRating * 20
+      )}%)`;
 
       console.log(distance.value, shotType.value, shotRating.value);
       setTimeout(function () {
         shotRating.checked = false;
       }, 500);
-      
     }
-  // if shotType is NOT checked
+    // if shotType is NOT checked
   } else {
-    alert("Please, choose Type of shot!");
+    alert('Please, choose Type of shot!');
     // почему-то это не работает
     // event.preventDefault();
     shotRating.checked = false;
