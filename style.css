@@ -32,7 +32,7 @@ input[type='range'] {
 label {
   white-space: nowrap;
   display: inline-block;
-  padding: 10px;
+  padding: .5rem;
 }
 
 #session span {
