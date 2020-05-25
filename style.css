@@ -32,8 +32,7 @@ input[type='range'] {
 label {
   white-space: nowrap;
   display: inline-block;
-/*   padding: .25rem; */
-  margin-right: .25rem;
+  padding: .25rem;
 }
 
 #session span {
