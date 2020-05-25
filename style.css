@@ -1,17 +1,19 @@
-body, select, output {
+body,
+select,
+output {
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-  max-width: 583px;
+  max-width: 420px;
   margin: 0 auto;
   padding: 1em;
 }
 
 fieldset {
   margin-bottom: 1em;
-  border-radius: .4em;
+  border-radius: 0.4em;
 }
 
 legend {
