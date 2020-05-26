@@ -19,8 +19,8 @@ function addShot(event) {
   // Get shotRating target element
   const shotRating = event.target;
 
-  // if shotType is checked
-  if (shotType) {
+  // if shotType and distance have value
+  if (shotType.value && distance.value) {
     // Событие "click" по нажатию на тег label вызывает автоматический клик по тегу input, поэтому мы используем событие "change" или "input"
     if (shotRating.tagName === 'INPUT') {
       // Get session div
@@ -52,7 +52,7 @@ function addShot(event) {
     }
     // if shotType is NOT checked
   } else {
-    alert('Please, choose Type of shot!');
+    alert('Please, choose "Distance to the Jack" and "Shot Type"!');
     // почему-то это не работает
     // event.preventDefault();
     shotRating.checked = false;
